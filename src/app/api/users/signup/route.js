@@ -3,12 +3,6 @@ import { connect } from "@/dbconfig/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import { sendEmail } from "@/helper/mailer";
-
-
-
-
-
-
 export async function POST(request){
     connect()
     try {
@@ -17,11 +11,11 @@ export async function POST(request){
 
         console.log(reqBody);
 
-        // const user = await User.findOne({email})
+        const user = await User.findOne({email})
 
-        // if(user){
-        //     return NextResponse.json({error: "User already exists"}, {status: 400})
-        // }
+        if(user){
+            return NextResponse.json({error: "User already exists"}, {status: 400})
+        }
 
         const salt = await bcryptjs.genSalt(10)
         const hashedPassword = await bcryptjs.hash(password, salt)

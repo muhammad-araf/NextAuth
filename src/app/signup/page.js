@@ -10,19 +10,23 @@ const page = () => {
     const [email,setEmail] = useState('')   
     const [password,setPassword] = useState('')
     const[show,setShow] = useState(false);
+    const[load,setLoad] = useState(false)
     const HandleInput = async () => {
+        setLoad(true)
         let response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/users/signup`,{
             method : 'POST',
             body : JSON.stringify({username,email,password})
         })
         response = await response.json()
         if(response.success){
+            setLoad(false)
             alert("Your Account has been created now login");
             setShow(true)
             setTimeout(() => {
                 router.push('/login')
             }, 2000);
         }
+        
         
     }
   return (
@@ -43,7 +47,13 @@ const page = () => {
             Please check your <strong>Inbox</strong> and <strong>Spam folder</strong><br/><br/>
             <h3>Redirecting to login page....</h3>
             </p>:null
+            
 
+    }
+    {
+        
+        load?<div className="loader"></div> : null
+        
     }
     </div>
     </div>
