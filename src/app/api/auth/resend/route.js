@@ -8,15 +8,16 @@ export const POST = async (request) => {
         await connect()
         const {email} = await request.json();
         if(!email){
+            return NextResponse.json({success:false,message:"Email Not Getting"})
         }
         const user = await User.findOne({email});
         if(!user){
             return NextResponse.json({success: false, message:"User Does not exist"})
         }
         const id = user.id
-        const EmailResponse = await sendEmail(email,emailType,id);
+        const EmailResponse = await sendEmail(email,id);
         return NextResponse.json({success:true,message : "Email Send Success",response:EmailResponse})
     } catch (error) {
-        return NextResponse.json({success:false,message:"Internal Server Error"},{status:500})
+        return NextResponse.json({success:false,message:"Internal Server Error",error:error.message},{status:500})
     }
 }
