@@ -5,11 +5,11 @@ const Page = () => {
   const router = useRouter()
 
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div >
+      <main>
 
-        <h4>This is <code>NEXTAUTH</code> <b>Home Page</b></h4>
-        <div className="homepage-btn">
+        <h4>This is NEXTAUTH <b>Home Page</b></h4>
+        <div className="">
         <button onClick={()=>router.push('/login')}>Login</button> <button onClick={()=>router.push('/signup')}>Register</button>
         </div>
         </main>
