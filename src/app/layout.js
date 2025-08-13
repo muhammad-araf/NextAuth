@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import BackgroundWrapper from "@/components/BackgroundWrapper";
 import { Suspense } from "react";
+// import Myheader from "@/components/Myheader";
 import Image from "next/image";
 
 <Image
@@ -40,7 +41,9 @@ export default function RootLayout({
   reverseOrder={true}
 />
         <BackgroundWrapper>
+          
           <Suspense fallback={<div>Loading header...</div>}>
+          {/* <Myheader/> */}
           </Suspense>
           {children}
         </BackgroundWrapper>

@@ -48,13 +48,13 @@ const Page = () => {
   return (
     <>
       <div className="flex justify-center items-center min-h-screen bg-transparent font-serif ">
-        <div className="my-inputs border-1 border-blue-500/30 pb-15 pt-6 w-100 rounded-lg backdrop-blur-lg ">
-          <h2 className="text-2xl text-gray-200 text-center mb-6 mt-10 ">Create an Account</h2>
+        <div className="my-inputs border-b-5 border-t-5 border-purple-400/60 pb-15 pt-6 w-100 rounded-lg backdrop-blur-lg ">
+          <h2 className="text-2xl text-gray-200 text-center mb-6 mt-10 font-bold">Create an Account</h2>
 
-          <div className="flex justify-center ">
-            <div className="flex items-center border-b-2 border-blue-400 rounded-lg p-0 w-[95%] ">
+          <div className="flex justify-center ">  
+            <div className="flex items-center border-b-2 border-gray-300 rounded-lg p-0 w-[95%] ">
               <span className="bg-transparent p-2">
-                <FaUser className="text-blue-500" />
+                <FaUser className="text-purple-400" />
               </span>
               <input
                 type='text'
@@ -68,9 +68,9 @@ const Page = () => {
           </div>
 
           <div className="flex justify-center ">
-            <div className="flex items-center border-b-2 border-blue-400 rounded-lg p-0 w-[95%] mt-4">
+            <div className="flex items-center border-b-2 border-gray-300 rounded-lg p-0 w-[95%] mt-4">
               <span className="bg-transparent p-2 ">
-                <FaEnvelope className="text-blue-500" />
+                <FaEnvelope className="text-purple-400" />
               </span>
               <input
                 type='email'
@@ -84,9 +84,9 @@ const Page = () => {
           </div>
 
           <div className="flex justify-center mt-4">
-            <div className="flex items-center border-b-2 border-blue-400 rounded-lg p-0 w-[95%] ">
+            <div className="flex items-center border-b-2 border-gray-300 rounded-lg p-0 w-[95%] ">
               <span className="bg-transparent p-2 ">
-                <FaLock className="text-blue-500" />
+                <FaLock className="text-purple-400" />
               </span>
               <input
                 type='password'
@@ -100,9 +100,9 @@ const Page = () => {
           </div>
 
           <div className="flex justify-center mt-4">
-            <div className="flex items-center border-b-2 border-blue-400 rounded-lg p-0 w-[95%] ">
+            <div className="flex items-center border-b-2 border-gray-300 rounded-lg p-0 w-[95%] ">
               <span className="bg-transparent p-2 ">
-                <FaLock className="text-blue-500" />
+                <FaLock className="text-purple-400" />
               </span>
               <input
                 type='password'
@@ -117,7 +117,7 @@ const Page = () => {
           <div className="flex justify-center">
             <button
               onClick={HandleInput}
-              className="p-1 mt-10 w-[95%] bg-transparent border-1 border-gray-500/20 rounded-sm text-l text-white cursor-pointer hover:bg-gray-500/10"
+              className="p-1 mt-10 w-[95%] bg-transparent border-1 border-gray-500/20 rounded-sm  text-lg text-purple-200 cursor-pointer hover:bg-gray-500/10 hover:text-white transition duration-150"
             >
               Signup
             </button>
@@ -125,7 +125,7 @@ const Page = () => {
           <div className="flex justify-center mt-4">
             <p className="text-white text-sm ">
               Already have an account?{" "}
-              <Link className="text-blue-500 hover:underline" href={'/login'}>
+              <Link className="text-purple-400/60 hover:text-purple-400 transition duration-300" href={'/login'}>
                 Login
               </Link>
             </p>
