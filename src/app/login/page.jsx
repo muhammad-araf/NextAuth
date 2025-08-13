@@ -11,25 +11,35 @@ const Page = () => {
     const [password, setPassword] = useState('');
 
     const HandleInput = async () => {
-        toast.promise(
-        fetch(`/api/auth/login`, {
-            method: 'POST',
-            body: JSON.stringify({  email, password }),
-            headers: {
-            'Content-Type': 'application/json'
-            }
-        }).then(async (res) => {
-            if (!res.success) throw new Error("Signup failed");
-            const data = await res.json();
-            // router.push('/verify');
-            return data;
-        }),
-        {
-            loading: 'Loging...',
-            success: 'Login Success!',
-            error: "Error When Login"
+     
+      
+      try {
+        const toastId = toast.loading("Logging In...");
+        
+        const response = await fetch(`/api/auth/login`, {
+          method: 'POST',
+          body: JSON.stringify({ email, password }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const res = await response.json();
+
+        toast.dismiss(toastId);
+
+        if (res.success) {
+          toast.success(res.message);
+        } else {
+          toast.error(res.message || res.error|| "Login failed!");
         }
-        );
+        
+      } catch (error) {
+        toast.dismiss();
+        toast.error(error || "Something went wrong");
+      }
+
+            
     };
 
   return (

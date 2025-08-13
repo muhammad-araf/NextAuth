@@ -30,10 +30,6 @@ const Page = () => {
     }
 
 const HandleInput = async () => {
-    if (!email || !OTP) {
-        toast.error("Please enter both Email and OTP");
-        return;
-    }
     const loadingToast = toast.loading("Verifying OTP...");
 
     try {
@@ -48,7 +44,7 @@ const HandleInput = async () => {
         const res = await response.json();
         console.log(res);
 
-        if (response.ok && res.success) {
+        if ( res.success) {
             toast.success(res.message || "User Verified Successfully", { id: loadingToast });
         } else {
             toast.error(res.error || res.message || "Verification failed", { id: loadingToast });
