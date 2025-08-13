@@ -39,7 +39,7 @@ const HandleInput = async () => {
     try {
         const response = await fetch(`/api/auth/verify`, {
             method: 'POST',
-            body: JSON.stringify({ email, OTP }),
+            body: JSON.stringify({ email : email.email, OTP }),
             headers: {
                 'Content-Type': 'application/json'
             }
