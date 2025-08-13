@@ -1,6 +1,18 @@
-import { Toaster } from 'react-hot-toast'
+import { Toaster } from "react-hot-toast";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import BackgroundWrapper from "@/components/BackgroundWrapper";
+import { Suspense } from "react";
+import Image from "next/image";
+
+<Image
+  src="/image.ico"
+  alt="Site Logo"
+  width={40}
+  height={40}
+  className="rounded-full"
+/>
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,18 +23,27 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-  
+
 export const metadata = {
   title: "NEXT-AUTH",
-  description: "Next Auth Full Stack Web App Created by Muhammad Araf",
+  description: "NEXT AUTH",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}){
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-              <Toaster />
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Toaster
+  position="top-center"
+  reverseOrder={true}
+/>
+        <BackgroundWrapper>
+          <Suspense fallback={<div>Loading header...</div>}>
+          </Suspense>
+          {children}
+        </BackgroundWrapper>
       </body>
     </html>
   );

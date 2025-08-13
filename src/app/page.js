@@ -1,8 +1,7 @@
 'use client'
-import styles from "./page.module.css";
 import { useRouter } from "next/navigation"
 
-export default function() {
+const Page = () => {
   const router = useRouter()
 
   return (
@@ -19,3 +18,4 @@ export default function() {
     </div>
   );
 }
+export default Page

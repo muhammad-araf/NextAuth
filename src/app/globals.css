@@ -1,121 +1,13 @@
-:root {
-  --background: #ffffff;
-  --foreground: #888585;
+@import "tailwindcss";
+
+@layer base {
+  /* your base styles */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
---background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-
-    --foreground: #ededed;
-  }
+@layer components {
+  /* your component styles */
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@layer utilities {
+  /* your utilities */
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-.text-field {
-  display: flex;                /* Make it a flex container */
-  flex-direction: column;       /* Stack inputs vertically */
-  justify-content: center;      /* Center vertically */
-  align-items: center;          /* Center horizontally */
-  height: 100vh;                /* Full screen height */
-
-}
-.my-inputs{
-      /* padding: 10px; */
-  border: 3px solid transparent; /* Needed for background-clip trick */
-  border-radius: 8px;
-  background-image:   
-    linear-gradient(#090909), /* inner background */
-    linear-gradient(to right, pink, blue); /* gradient border */
-  background-origin: border-box;
-  background-clip: padding-boxa, border-box;
-    padding: 3rem;
-    border-radius: 40px;
-    
-}
-input{
-  padding: 7px;
-  margin-top: 20px;
-  border-radius: 10px;
-  border: none;
-  
-}
-.my-inputs button{
-  padding: 6px;
-  margin-top: 20px;
-    border: 1px solid transparent; /* Needed for background-clip trick */
-  border-radius: 8px;
-  background-image: 
-    linear-gradient(black), /* inner background */
-    linear-gradient(to right, pink, blue); /* gradient border */
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  cursor: pointer;
-}
-p{
-  font-size: 10px;
-}
-.myLink{
-  color: rgb(11, 119, 214);
-}
-
-.homepage-btn{
-  display: flex;                /* Make it a flex container */
-  flex-direction: row;  
-  align-items: center;
-  justify-content: center;
-}
-.homepage-btn button{
-  background-color: transparent;
-  padding: 5px 10px;
-  margin-left: 7px;
-  border: 1px solid white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.homepage-btn button:hover{
-  background-color: #363455;
-}
-    .loader {
-      width: 30px;
-      height: 30px;
-      border: 3px solid #e0e0e0;
-      border-top: 3px solid #0099ff;
-      border-radius: 50%;
-      animation: spin 0.5s linear infinite; 
-    }
-
-    @keyframes spin {
-      0%   { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
