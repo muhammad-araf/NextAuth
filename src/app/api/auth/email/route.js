@@ -5,7 +5,8 @@ export  const POST = async (request) => {
     const {email} = await request.json()
     ;(await cookies()).set("signupEmail",email,{
         httpOnly:true,
-        secure:true
+        secure:true,
+        path: "/"
     })
     return NextResponse.json({success:true})
 }

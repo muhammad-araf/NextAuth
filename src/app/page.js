@@ -11,7 +11,7 @@ const Page = () => {
       <header className="fixed top-0 left-0 w-full flex items-center justify-center px-6 py-4  ">
         <nav className="flex items-center justify-between w-full max-w-7xl bg-gray-600/20 pl-7 pr-7 pt-2 pb-2 rounded-lg backdrop-blur-lg z-50 shadow-lg">
           <h1 className="text-xl md:text-2xl font-bold tracking-wide text-purple-400 flex justify-between cursor-pointer" onClick={()=>router.push("/")} >
-            <Image src={"/assets/images/image.png"} width={30} height={25} className="text-white bg-transparent mr-3"/>
+            <Image src={"/assets/images/image.png"} width={30} height={25} alt="Logo" className="text-white bg-transparent mr-3"/>
             Note App
           </h1>
           <div className="flex items-center space-x-4">
@@ -51,10 +51,7 @@ const Page = () => {
         </div>
       </main>
 
-      <footer className="bg-black/5 text-gray-500 text-center py-4 text-sm">
-        © 2025 Note Web App. All Rights Reserved.
-      </footer>
-    </div>
+    </div>  
   )
 }
 

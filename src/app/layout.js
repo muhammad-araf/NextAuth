@@ -26,8 +26,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "NEXT-AUTH",
-  description: "NEXT AUTH",
+  title: "Note APP",
+  description: "A full-stack note-taking web app built with Next.js Create, Read, Update, and Delete your personal notes with privacy.",
 };
 
 export default function RootLayout({
@@ -43,7 +43,6 @@ export default function RootLayout({
         <BackgroundWrapper>
           
           <Suspense fallback={<div>Loading header...</div>}>
-          {/* <Myheader/> */}
           </Suspense>
           {children}
         </BackgroundWrapper>

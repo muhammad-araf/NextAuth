@@ -6,8 +6,8 @@ import { toast } from "react-hot-toast";
 import OtpInput from 'react-otp-input';
 
 const Page = () => {
+    const router = useRouter()
     const [count,setCount] = useState(30)
-    const router = useRouter();
     const [email, setEmail] = useState('');
     const [OTP,setOtp] = useState('')
     useEffect(()=>{
@@ -45,6 +45,7 @@ const HandleInput = async () => {
         console.log(res);
 
         if ( res.success) {
+            router.push("/login")
             toast.success(res.message || "User Verified Successfully", { id: loadingToast });
         } else {
             toast.error(res.error || res.message || "Verification failed", { id: loadingToast });

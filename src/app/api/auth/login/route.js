@@ -32,7 +32,7 @@ export async function POST(request){
          httpOnly: true,
          secure: true,
          sameSite: "strict",
-         maxAge: 10 * 24 * 60 * 60, // 10 days
+         maxAge: 10 * 24 * 60 * 60,
          path: "/",
          });
      return NextResponse.json({

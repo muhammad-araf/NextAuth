@@ -29,6 +29,7 @@ const Page = () => {
         toast.dismiss(toastId);
 
         if (res.success) {
+          router.push("/new")
           toast.success(res.message);
         } else {
           toast.error(res.message || res.error|| "Login failed!");
